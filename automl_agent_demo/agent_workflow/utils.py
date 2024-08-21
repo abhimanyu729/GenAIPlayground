@@ -11,13 +11,10 @@ class DataExtractor:
         except requests.exceptions.RequestException as e:
             print(f"Error fetching the URL: {e}")
             return None
-
+        
     @staticmethod
-    def parse_html(content: str) -> BeautifulSoup:
-        return BeautifulSoup(content, 'lxml')
-
-    @staticmethod
-    def extract_data(soup: BeautifulSoup, tag: str, attrs: dict) -> str:
+    def extract_data(content: str) -> str:
+        soup = BeautifulSoup(content, 'lxml')
         # Initialize a list to keep all elements in order
         elements = []
 

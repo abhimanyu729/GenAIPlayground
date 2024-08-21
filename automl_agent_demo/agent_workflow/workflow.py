@@ -1,14 +1,6 @@
-from enum import Enum, auto
 from transitions import Machine
-
-# Define the states for the workflow
-class NodeState(Enum):
-    COLLECTING_INPUTS = auto()
-    GENERATING_CODE = auto()
-    EXECUTING_CODE = auto()
-    FIXING_ERRORS = auto()
-    FINISHED = auto()
-    MAX_RETRIES_REACHED = auto()
+from node_config import NodeState
+from nodes import *
 
 # Shared context for passing data between nodes
 class WorkflowContext:

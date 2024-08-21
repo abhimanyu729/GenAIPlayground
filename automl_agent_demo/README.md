@@ -30,7 +30,7 @@ This project leverages the power of LLMs to automate the following tasks:
 
 ## Requirements
 
-- Python 3.8+
+- Python 3.10+
 - [Torch](https://pytorch.org/) (tested with version 1.11+)
 - [Transformers](https://huggingface.co/docs/transformers/index) (tested with version 4.0+)
 - [Pydantic](https://pydantic-docs.helpmanual.io/) (tested with version 1.10+)

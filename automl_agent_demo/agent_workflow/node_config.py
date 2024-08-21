@@ -1,11 +1,20 @@
 import copy
+from enum import Enum, auto
+
+# Define the states for the workflow
+class NodeState(Enum):
+    COLLECTING_INPUTS = auto()
+    GENERATING_CODE = auto()
+    EXECUTING_CODE = auto()
+    FIXING_ERRORS = auto()
+    FINISHED = auto()
+    MAX_RETRIES_REACHED = auto()
 
 class NodeConfig:
     def __init__(self):
         # General generation arguments
         self.generation_args_template = {
             "return_full_text": False,
-            "temperature": 0.0,
             "do_sample": False,
         }
 

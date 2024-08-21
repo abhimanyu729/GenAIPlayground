@@ -1,5 +1,6 @@
 from pydantic import BaseModel, validator, HttpUrl, constr
 from pathlib import Path
+from typing import Union
 
 class DatasetLocationModel(BaseModel):
     location: Union[HttpUrl, constr(strip_whitespace=True)]

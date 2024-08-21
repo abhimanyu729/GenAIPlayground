@@ -4,11 +4,11 @@ from agent_workflow.utils import DataExtractor
 
 def main():
 
-    documentation_url = input("Enter URL of an AutoML library's documentation")
-    raw_html = DataExtractor().fetch_raw_html(documentation_url)
+    documentation_url = input("Enter URL of an AutoML library's documentation: ")
+    raw_html = DataExtractor().fetch_url_content(documentation_url)
     documentation_context = None
     if raw_html:
-        documentation_context = DataExtractor().parse_html(raw_html)
+        documentation_context = DataExtractor().extract_data(raw_html)
 
     model_name = "microsoft/Phi-3-mini-128k-instruct"
     lm = LanguageModel(model_name)
