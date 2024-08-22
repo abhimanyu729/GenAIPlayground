@@ -1,6 +1,6 @@
 import traceback
-from node_config import NodeConfig, NodeState
-from user_interface import Conversation
+from .node_config import NodeConfig, NodeState
+from .user_interface import Conversation
 
 # Base class for all nodes in the workflow
 class Node:

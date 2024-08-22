@@ -1,6 +1,6 @@
 from transitions import Machine
-from node_config import NodeState
-from nodes import *
+from .node_config import NodeState
+from .nodes import *
 
 # Shared context for passing data between nodes
 class WorkflowContext:

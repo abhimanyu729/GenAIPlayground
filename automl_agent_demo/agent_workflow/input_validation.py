@@ -1,4 +1,4 @@
-from pydantic import BaseModel, validator, HttpUrl, constr
+from pydantic import BaseModel, validator, HttpUrl, constr, ValidationError
 from pathlib import Path
 from typing import Union
 
