@@ -14,6 +14,7 @@ def main():
     lm = LanguageModel(model_name)
     workflow = Workflow(lm, documentation_context)
     workflow.run()
+    workflow.visualize_workflow(filename='workflow_graph_execution')
 
 if __name__ == "__main__":
     main()

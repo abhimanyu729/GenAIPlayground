@@ -1,4 +1,4 @@
-This repository contains code for a AutoML LLM Agent Demo. The project demonstrates a proof of concept system that can automatically generate code for finding best machine learning model for a given user problem using large language models (LLMs). The system integrates multiple components to extract documentation and entities, generate, execute, and debug code automatically. This is achieved through a state machine workflow, with each step being managed by specific nodes that interact with an LLM.
+This repository contains code for an AutoML LLM Agent Demo. The project demonstrates a proof of concept system that can automatically generate code for finding best machine learning model for a given user problem using large language models (LLMs). The system integrates multiple components to extract documentation and entities, generate, execute, and debug code automatically. This is achieved through a state machine workflow, with each step being managed by specific nodes that interact with an LLM.
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -60,30 +60,34 @@ This project leverages the power of LLMs to automate the following tasks:
 
 ## Usage
 
-1. **Download a pre-trained model**:
-    Update the `model_name` in the script to the desired pre-trained model from Hugging Face. The default is `microsoft/Phi-3-mini-128k-instruct`.
-
-2. **Run the workflow**:
+1. **Run the workflow**:
     ```bash
-    python your_script.py
+    python run_workflow.py
     ```
     Follow the prompts to input the dataset URL, machine learning task, and target column.
 
 3. **Visualize the workflow**:
-    After running the script, a PNG file of the workflow execution will be generated. This visual representation shows the state transitions and flow of the entire process.
+
+    After running the script, a PNG file with name 'workflow_graph_execution' of the workflow execution will be generated. This visual representation shows the state transitions and flow of the entire process.
 
 ## Project Structure
 
 ```
 ├── README.md                # Project documentation
-├── your_script.py           # Main script for running the workflow
 ├── requirements.txt         # List of dependencies
-└── workflow_modules/        # Directory containing the modules
+└── assets/                  # Directory containing project assets
+└── notebooks/               # Directory containing project notebooks
+└── scripts/                 # Directory containing execution scripts
+    ├── run_workflow.py      # Main script for running the workflow
+└── agent_workflow/          # Directory containing the modules
     ├── language_model.py    # Module for handling the language model
     ├── workflow.py          # Module for managing the workflow and states
     ├── nodes.py             # Module containing the various node classes
     ├── utils.py             # Utility functions
-    └── visualization.py     # Module for workflow visualization
+    ├── node_config.py       # Module for node cofigurations like prompts, generation args...
+    ├── input_validation.py  # Module for validating input
+    └── user_interface.py    # Module for fetching user input and controlling conversation
+    
 ```
 
 ## Customization
@@ -91,11 +95,3 @@ This project leverages the power of LLMs to automate the following tasks:
 - **Adding New Nodes**: To add new nodes, define a new class in `nodes.py` and integrate it into the workflow state machine in `workflow.py`.
 - **Model Customization**: You can replace the default language model by changing the `model_name` in the `LanguageModel` class. Ensure that the new model supports the required tasks.
 - **Generation Arguments**: Modify the generation arguments in the `NodeConfig` class to fine-tune the behavior of the text generation.
-
-## Contributing
-
-We welcome contributions to improve this project! Please fork the repository and submit a pull request with your changes. Ensure that your code adheres to PEP 8 standards and is well-documented.
-
-## License
-
-This project is licensed under the Apache License. See the [LICENSE](LICENSE) file for details.
