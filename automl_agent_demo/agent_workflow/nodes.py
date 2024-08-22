@@ -84,8 +84,21 @@ class ExecuteCodeNode(Node):
         self.log_transition(source_state, dest_state)
 
         return success
-
+    def check_formatting(self, code):
+        # Check if the code contains markdown formatting with triple backticks
+        if "```" in code:
+            # Split the code by newlines
+            lines = code.split('\n')
+            # Filter out lines that start or end with triple backticks
+            executable_lines = [line for line in lines if not line.strip().startswith('```')]
+            # Join the remaining lines back into a single string
+            return '\n'.join(executable_lines)
+        else:
+            # If no markdown formatting is detected, return the input as is
+            return code
+        
     def execute_code(self, code):
+        code = self.check_formatting(code)
         # code execution logic
         try:
             print(code)
