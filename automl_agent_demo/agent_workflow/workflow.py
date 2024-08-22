@@ -1,4 +1,5 @@
 from transitions import Machine
+import graphviz
 from .node_config import NodeState
 from .nodes import *
 

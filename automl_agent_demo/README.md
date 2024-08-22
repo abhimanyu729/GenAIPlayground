@@ -8,8 +8,6 @@ This repository contains code for an AutoML LLM Agent Demo. The project demonstr
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Customization](#customization)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Project Overview
 
