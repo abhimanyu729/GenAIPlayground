@@ -93,3 +93,7 @@ This project leverages the power of LLMs to automate the following tasks:
 - **Adding New Nodes**: To add new nodes, define a new class in `nodes.py` and integrate it into the workflow state machine in `workflow.py`.
 - **Model Customization**: You can replace the default language model by changing the `model_name` in the `LanguageModel` class. Ensure that the new model supports the required tasks.
 - **Generation Arguments**: Modify the generation arguments in the `NodeConfig` class to fine-tune the behavior of the text generation.
+
+
+## Reference Production Architecture:
+[Miro Board](https://miro.com/app/board/uXjVLcSdU2U=/)
