@@ -1,4 +1,4 @@
-This repository contains code for an AutoML LLM Agent Demo. The project demonstrates a proof of concept system that can automatically generate code for finding best machine learning model for a given user problem using large language models (LLMs). The system integrates multiple components to extract documentation and entities, generate, execute, and debug code automatically. This is achieved through a state machine workflow, with each step being managed by specific nodes that interact with an LLM.
+This package contains code for an AutoML LLM Agent Demo. The project demonstrates a proof of concept system that can automatically generate code for finding best machine learning model for a given user problem using large language models (LLMs). The system integrates multiple components to extract documentation and entities, generate, execute, and debug code automatically. This is achieved through a state machine workflow, with each step being managed by specific nodes that interact with an LLM.
 
 ## Table of Contents
 - [Project Overview](#project-overview)
